@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "68157917-5131-46d7-b732-61086119ba86",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetMontoConTipoCambio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/conversion-controller/aplicatipocambioamonto?monto=500&monedaOrigen=dolar&monedaDestino=euros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conversion-controller",
+						"aplicatipocambioamonto"
+					],
+					"query": [
+						{
+							"key": "monto",
+							"value": "500"
+						},
+						{
+							"key": "monedaOrigen",
+							"value": "dolar"
+						},
+						{
+							"key": "monedaDestino",
+							"value": "euros"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutActualizarValorTipoCambio",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"tipoCambio\": 700.4\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/conversion-controller/actualizatipocambio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conversion-controller",
+						"actualizatipocambio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostConversion ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"monedaOrigen\": \"dolar\",\r\n\t\"monedaDestino\": \"pesos\",\r\n\t\"monto\": 50,\r\n\t\"tipoCambio\": 485.336,\r\n\t\"montoConTipoCambio\": 24266.8\r\n}"
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth_token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "angularapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "giancarlo",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
